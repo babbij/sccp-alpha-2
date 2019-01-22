@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Share Key</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  
+  <script type="text/javascript">
+    window.onload = function() {
+      new ClipboardJS('input,textarea');
+    }
+    
+  </script>
+  
+  <style type="text/css">
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    textarea {
+      font-size: 1.1em;
+      width: 50%;
+      height: 300px;
+    }
+    
+  </style>
+</head>
+  
+<body>
+
+  <h1>Share this Key</h1>
+  <textarea name="key" 
+    autocomplete="off" 
+    autocorrect="off" 
+    autocapitalize="off" 
+    spellcheck="false"
+    readonly>{{ key }}</textarea>
+  
+  <p><a href="/share">Back</p>
+  
+</body>
+</html>

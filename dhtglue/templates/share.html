@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Share Key</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  
+  <script type="text/javascript">
+    window.onload = function() {
+      new ClipboardJS('input,textarea');
+    }
+    
+  </script>
+  
+  <style type="text/css">
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    table#frame {
+      width: 100%;
+      min-height: 300px;
+    }
+    
+    table#frame > tbody > tr > td {
+      vertical-align: top;
+      width: 50%;
+      padding: 20px;
+    }
+    
+    table#frame > tbody > tr > td + td {
+      border-left: solid 2px #c0c0c0;
+    }
+    
+    table#grid > tbody > tr > th, table#grid > tbody > tr > td {
+      text-align: left;
+      padding: 5px;
+      vertical-align: middle;
+    }
+    
+    table#grid > tbody > tr > td input[type="text"], table#grid > tbody > tr > td input[type="datetime-local"] {
+      padding: 5px;
+      font-size: 1.5em;
+      width: 100%;
+    }
+    
+    input[type="submit"] {
+      border: solid 1px black;
+      padding: 10px;
+      font-size: 1.1em;
+      background-color: #f0f0f0;
+    }
+
+    input[type='radio'], label {   
+        vertical-align: baseline;
+        padding: 10px;
+        margin: 10px;
+     }
+    
+    textarea {
+      font-size: 1.1em;
+      width: 100%;
+      height: 150px;
+    }
+    
+  </style>
+</head>
+  
+<body>
+  
+  <table id="frame">
+    <tbody>
+      <tr>
+        <td>
+          <h1>Create Key</h1>
+          
+          <form action="/share" method="GET">
+            <table id="grid">
+              <tbody>
+                <tr>
+                  <th>Subject:</th>
+                  <td><input type="text" name="sub"></td>
+                </tr>
+                <tr>
+                  <th>Predicate:</th>
+                  <td><input type="text" name="pre"></td>
+                </tr>
+                <tr>
+                  <th>Object:</th>
+                  <td><input type="text" name="obj"></td>
+                </tr>
+                <tr>
+                  <th>Start:</th>
+                  <td><input type="datetime-local" name="start"></td>
+                </tr>
+                <tr>
+                  <th>End:</th>
+                  <td><input type="datetime-local" name="end"></td>
+                </tr>
+              </tbody>
+            </table>
+          
+            <input type="submit">
+          </form>
+        </td>
+
+        <td>
+          <h1>Upload Key</h1>
+          
+          <form action="/share" method="POST">
+            <textarea name="key"></textarea>
+            
+            <br >
+            
+            <input type="submit">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+</body>
+</html>

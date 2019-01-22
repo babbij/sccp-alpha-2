@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Share Key</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  
+  <script type="text/javascript">
+    window.onload = function() {
+      new ClipboardJS('input,textarea');
+    }
+    
+  </script>
+  
+  <style type="text/css">
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+</head>
+  
+<body>
+
+  <h1>Access Granted</h1>
+  
+  <p><b>Subject:</b>: {{ triple[0] if triple[0] else 'ANY' }}</p>
+  <p><b>Predicate:</b>: {{ triple[1] if triple[1] else 'ANY' }}</p>
+  <p><b>Object:</b>: {{ triple[2] if triple[2] else 'ANY' }}</p>
+
+  <br>
+
+  <p><a href="/share">Back</p>
+
+  
+</body>
+</html>
